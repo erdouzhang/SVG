@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#sec {
+			background: url(images/07.jpg);
+			width: 200px;
+			height: 500px;
+			position: relative;
+			overflow: hidden;
+		}
+		#sec-description {
+			position: absolute;
+			color: #fff;
+			box-sizing: border-box;
+			padding: 0 30px;			
+			z-index: 20;
+			-webkit-transform-style: preserve-3d;/*解决闪动问题*/
+		}
+		h1 {
+			font-style: 48px;
+			-webkit-backface-visibility:  hidden;/*解决闪动问题*/
+		}
+		p {
+			font-style: 14px;
+			-webkit-backface-visibility:  hidden;/*解决闪动问题*/
+		}
+		#polygon {
+			fill: #34495e;/*修改多变形的背景颜色为深蓝绿色*/
+			stroke-width: 0;/*去除多边形的边框*/
+		}
+
+		/*动画效果*/		
+		#sec  svg {	
+			transform: all .5s;		
+			-webkit-transform: all .5s;			
+		}
+		#sec:hover svg {
+			opacity: 0.6;
+			transform: translateY(-30px);
+			-webkit-transform: translateY(-30px);
+		}
+	</style>
+</head>
+<body>
+	<div id="sec">
+		<div id="sec-description">
+			<h1>Hello</h1>
+			<p>If you leave me, please don’t comfort me because each sewing has to meet stinging pain. </p>
+		</div>
+		<svg width="200px" height="500px">
+			<polygon fill="white" stroke="blue" id="polygon" points="0,0,200,0,200,350,0,250"></polygon>
+		</svg>
+	</div>
+</body>
+</html>
